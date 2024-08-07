@@ -4,9 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
+/// <summary>
+/// A class for controlling a video player in a Unity game.
+/// </summary>
 public class VidPlayer : MonoBehaviour
 {
+    /// <summary>
+    /// The name of the video file to play.
+    /// </summary>
     public string videoFileName;
+
+    /// <summary>
+    /// The VideoPlayer component for playing the video.
+    /// </summary>
     public VideoPlayer videoPlayer;
 
     private void Awake()
@@ -18,11 +28,17 @@ public class VidPlayer : MonoBehaviour
         videoPlayer.Prepare();
     }
 
+    /// <summary>
+    /// Plays the video.
+    /// </summary>
     public void Play()
     {
         videoPlayer.Play();
     }
 
+    /// <summary>
+    /// Pauses the video.
+    /// </summary>
     public void Pause()
     {
         videoPlayer.Pause();
