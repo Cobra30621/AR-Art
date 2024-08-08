@@ -32,7 +32,7 @@ public class UI_VideoPlayer : MonoBehaviour
     /// <summary>
     /// A flag indicating whether a video is currently playing.
     /// </summary>
-    private bool isPlaying = false;
+    public bool isPlaying { get; private set; }
 
     /// <summary>
     /// The VideoData scriptable object containing video data.

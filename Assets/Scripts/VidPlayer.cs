@@ -19,13 +19,37 @@ public class VidPlayer : MonoBehaviour
     /// </summary>
     public VideoPlayer videoPlayer;
 
+    public bool preparedOnAwake;
+
+    public bool IsPrepared { get; private set; }
+
+
     private void Awake()
     {
-        var videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
+        IsPrepared = false;
+
+        if (preparedOnAwake)
+            Prepare(videoFileName);
+    }
+
+    public void Prepare(string fileName)
+    {
+        var videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, fileName);
         Debug.Log(videoPath);
 
-        videoPlayer.url = videoPath;
-        videoPlayer.Prepare();
+        // Check if the video file exists
+        if (System.IO.File.Exists(videoPath))
+        {
+            videoPlayer.url = videoPath;
+            videoPlayer.Prepare();
+
+            IsPrepared = true;
+        }
+        else
+        {
+            Debug.LogError($"Video file not found: {videoPath}");
+            IsPrepared = false;
+        }
     }
 
     /// <summary>
@@ -33,7 +57,8 @@ public class VidPlayer : MonoBehaviour
     /// </summary>
     public void Play()
     {
-        videoPlayer.Play();
+        if (!IsPrepared)
+            videoPlayer.Play();
     }
 
     /// <summary>
