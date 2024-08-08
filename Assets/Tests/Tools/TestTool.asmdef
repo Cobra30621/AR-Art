@@ -1,0 +1,16 @@
+{
+    "name": "TestTool",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b0558cff861b5e24e90f75401da04373"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

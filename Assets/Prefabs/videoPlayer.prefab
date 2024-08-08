@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoFileName: rockBird.mp4
   videoPlayer: {fileID: 8961911478549651004}
+  preparedOnAwake: 1
 --- !u!328 &8961911478549651004
 VideoPlayer:
   m_ObjectHideFlags: 0
