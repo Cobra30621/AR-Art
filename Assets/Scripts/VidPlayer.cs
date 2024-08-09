@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -12,11 +13,14 @@ public class VidPlayer : MonoBehaviour
     /// <summary>
     /// The name of the video file to play.
     /// </summary>
+    [ValidateInput("NotNull", 
+        "File name cannot be null or empty.")]
     public string videoFileName;
 
     /// <summary>
     /// The VideoPlayer component for playing the video.
     /// </summary>
+    [Required]
     public VideoPlayer videoPlayer;
 
     public bool preparedOnAwake;
@@ -67,5 +71,10 @@ public class VidPlayer : MonoBehaviour
     public void Pause()
     {
         videoPlayer.Pause();
+    }
+    
+    private bool NotNull(string info)
+    {
+        return !string.IsNullOrEmpty(info);
     }
 }

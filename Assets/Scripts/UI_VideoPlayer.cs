@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -12,31 +13,39 @@ public class UI_VideoPlayer : MonoBehaviour
     /// <summary>
     /// The VideoPlayer component for playing videos.
     /// </summary>
+    [Required]
     public VideoPlayer videoPlayer;
     
     /// <summary>
     /// The GameObject for the main panel UI.
     /// </summary>
+    [Required]
     public GameObject mainPanel;
     
     /// <summary>
     /// The RawImage component for displaying the video.
     /// </summary>
+    [Required]
     public RawImage videoView;
     
     /// <summary>
     /// The Button component for closing the video player.
     /// </summary>
+    [Required]
     public Button closeButton;
 
     /// <summary>
     /// A flag indicating whether a video is currently playing.
     /// </summary>
     public bool isPlaying { get; private set; }
+    
+    public string currentVideo { get; private set; }
 
     /// <summary>
     /// The VideoData scriptable object containing video data.
     /// </summary>
+    [Required]
+    [InlineEditor]
     public VideoData videoData;
 
 
@@ -73,6 +82,8 @@ public class UI_VideoPlayer : MonoBehaviour
     /// <param name="videoId">The ID of the video to prepare.</param>
     private IEnumerator PrepareVideoCoroutine(string videoId)
     {
+        currentVideo = videoId;
+        
         // Show the main panel
         mainPanel.SetActive(true);
         // Disable the video view until the video is prepared
@@ -117,7 +128,7 @@ public class UI_VideoPlayer : MonoBehaviour
     /// <summary>
     /// Closes the video player.
     /// </summary>
-    private void Close()
+    public void Close()
     {
         // Stop the video
         videoPlayer.Stop();

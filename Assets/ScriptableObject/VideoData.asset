@@ -15,6 +15,8 @@ MonoBehaviour:
   videos:
   - videoId: test
     fileName: test.mp4
+  - videoId: anotherTest
+    fileName: test.mp4
   - videoId: light
     fileName: light.mp4
   - videoId: lookBird

@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Tests.EditMode
 {
+    /// <summary>
+    /// This class contains tests for the TestHelper class in the Tests.Tools namespace.
+    /// </summary>
     public class TestHelperTests
     {
         [Test]

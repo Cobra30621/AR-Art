@@ -4,11 +4,15 @@ using UnityEngine.TestTools;
 
 namespace Tests.EditMode
 {
+    /// <summary>
+    /// This class contains tests for the VideoData class in the Tests.EditMode namespace.
+    /// </summary>
     public class VideoDataTest
     {
         [Test]
         public void GetVideoFileName_VideoIdCaseSensitive_ReturnsCorrectFileName()
         {
+            // Tests if the GetVideoFileName method returns the correct file name for a given video ID (case sensitive).
             VideoData videoData = ScriptableObject.CreateInstance<VideoData>();
             videoData.videos = new VideoEntry[]
             {
@@ -29,6 +33,7 @@ namespace Tests.EditMode
         [Test]
         public void GetVideoFileName_VideoIdNotFound_LogsErrorAndReturnsEmptyString()
         {
+            // Tests if the GetVideoFileName method logs an error and returns an empty string when the video ID is not found.
             VideoData videoData = ScriptableObject.CreateInstance<VideoData>();
             videoData.videos = new VideoEntry[]
             {
