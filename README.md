@@ -2,7 +2,7 @@
 
 Cilab 與曹松清畫家合作設計的互動式畫展，使用手機拍攝藝術後，撥放對應的影片。
 
-- [Demo](https://youtube.com/shorts/Jmn1hbVH2QE)
+[Demo 影片](https://youtube.com/shorts/cEkPMk3ohgw?feature=share)
 
 ## 相關資訊
 
@@ -16,6 +16,13 @@ Cilab 與曹松清畫家合作設計的互動式畫展，使用手機拍攝藝�
 
 ### 上架平台
 - itch.io: https://cobra3279.itch.io/art-ar
+- 專案 QR Code :
+
+![qrcode-generator](https://hackmd.io/_uploads/rJLNINAFC.png)
+
+- [使用者文件](https://hackmd.io/@Cobra3279/SkG_wSQ5C)
+- [README 用圖片放置區](https://hackmd.io/@Cobra3279/r1uxNBQ50)
+
 
 
 ## 內容說明
@@ -38,6 +45,7 @@ Cilab 與曹松清畫家合作設計的互動式畫展，使用手機拍攝藝�
 ### 輸入前驗證
 
 點擊 Tools/Odin/Validator 可以打開驗證頁面
+
 ![image](https://hackmd.io/_uploads/Bkt3gBmcA.png)
 
 點擊執行，可以檢查專案有沒有錯誤。
@@ -45,11 +53,12 @@ Cilab 與曹松清畫家合作設計的互動式畫展，使用手機拍攝藝�
 
 ![image](https://hackmd.io/_uploads/H1eEWS75C.png)
 
+- [詳情可參考](https://odininspector.com/tutorials/odin-validator/getting-started-with-odin-validator)
 
 ## 相關教學
 - 在 WebGL 撥放影片
   - [How to Play a Video in Unity WebGL (Simple)](https://www.youtube.com/watch?v=9UE3hLSHMTE)
-
+- [【教學】Unity 學習方向指引](https://hackmd.io/t8psZwSOQo29LwPkpmLcDA?view)
   
 
 
