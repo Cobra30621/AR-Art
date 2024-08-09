@@ -33,7 +33,14 @@ Cilab 與曹松清畫家合作設計的互動式畫展，使用手機拍攝藝�
 - Object Tracker.scene: 相機掃描圖片後，在畫作上顯示影片
 
 
+
+---
+
+<details><summary>
+
 ### 新增影片
+</summary>
+
 1. 在 Assets/StreamingAssets 資料夾中放入影片檔案
 2. 在 Assets/ScriptableObject/VideoData 檔案中，加入對應的 `影片 Id` 與影片檔案名稱
  ![image](https://hackmd.io/_uploads/BJmcyHm9C.png)
@@ -42,7 +49,15 @@ Cilab 與曹松清畫家合作設計的互動式畫展，使用手機拍攝藝�
 4. 在場景的 ImageTracker 中，將 `影片 Id` 加入 ImageTargets 中
  ![image](https://hackmd.io/_uploads/ryxueSQ50.png)
 
-### 輸入前驗證
+</details>
+
+---
+
+<details><summary>
+
+### 輸出前驗證
+</summary>
+
 
 點擊 Tools/Odin/Validator 可以打開驗證頁面
 
@@ -54,6 +69,9 @@ Cilab 與曹松清畫家合作設計的互動式畫展，使用手機拍攝藝�
 ![image](https://hackmd.io/_uploads/H1eEWS75C.png)
 
 - [詳情可參考](https://odininspector.com/tutorials/odin-validator/getting-started-with-odin-validator)
+
+
+</details>
 
 ## 相關教學
 - 在 WebGL 撥放影片
