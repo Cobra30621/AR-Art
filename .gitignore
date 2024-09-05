@@ -76,3 +76,8 @@ crashlytics-build.properties
 
 /bin/
 
+.vsconfig
+GlobalSerializationConfig.asset
+GlobalSerializationConfig.asset.meta
+Resources.meta
+Sirenix.meta
