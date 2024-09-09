@@ -30,6 +30,7 @@ namespace Tests.EditMode
             Assert.AreNotEqual("video2.mp4", result);
         }
 
+
         [Test]
         public void GetVideoFileName_VideoIdNotFound_LogsErrorAndReturnsEmptyString()
         {
@@ -45,6 +46,42 @@ namespace Tests.EditMode
 
             LogAssert.Expect(LogType.Error, new System.Text.RegularExpressions.Regex(".*"));
             Assert.AreEqual("", result);
+        }
+
+        [Test]
+        public void IsLandscapeVideo_VideoIdExistsAndIsLandscape_ReturnsTrue()
+        {
+            // Arrange
+            VideoData videoData = ScriptableObject.CreateInstance<VideoData>();
+            videoData.videos = new VideoEntry[]
+            {
+                new VideoEntry { videoId = "1", fileName = "video1.mp4", isLandscapeVideo = true },
+                new VideoEntry { videoId = "2", fileName = "video2.mp4", isLandscapeVideo = false }
+            };
+
+            // Act
+            bool result = videoData.IsLandscapeVideo("1");
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void IsLandscapeVideo_VideoIdExistsButIsNotLandscape_ReturnsFalse()
+        {
+            // Arrange
+            VideoData videoData = ScriptableObject.CreateInstance<VideoData>();
+            videoData.videos = new VideoEntry[]
+            {
+                new VideoEntry { videoId = "1", fileName = "video1.mp4", isLandscapeVideo = false },
+                new VideoEntry { videoId = "2", fileName = "video2.mp4", isLandscapeVideo = true }
+            };
+
+            // Act
+            bool result = videoData.IsLandscapeVideo("1");
+
+            // Assert
+            Assert.IsFalse(result);
         }
     }
 }

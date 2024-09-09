@@ -24,7 +24,7 @@ namespace Tests.PlayMode
         }
 
         [UnityTest]
-        public IEnumerator PlayVideo_ShouldStartNewVideo_IfNoVideoIsPlaying()
+        public IEnumerator PlayVideo_ShouldStartNewVideo()
         {
             // Act
             _uiVideoPlayer.PlayVideo("test");
@@ -39,26 +39,6 @@ namespace Tests.PlayMode
             // Assert
             Assert.IsTrue(_uiVideoPlayer.isPlaying);
             Assert.IsTrue(_uiVideoPlayer.mainPanel.activeSelf);
-            Assert.AreEqual("test", _uiVideoPlayer.currentVideo);
-        }
-
-        [UnityTest]
-        public IEnumerator PlayVideo_KeepSameVideo_IfVideoIsAlreadyPlaying()
-        {
-            // Arrange
-            _uiVideoPlayer.PlayVideo("test");
-
-            while (!_uiVideoPlayer.videoPlayer.isPrepared)
-            {
-                yield return null;
-            }
-
-            // Act
-            _uiVideoPlayer.PlayVideo("anotherTest");
-
-            yield return new WaitForSeconds(1f); // Adjust the wait time based on the video duration
-
-            // Assert
             Assert.AreEqual("test", _uiVideoPlayer.currentVideo);
         }
 

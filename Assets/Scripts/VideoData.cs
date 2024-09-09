@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -33,7 +34,31 @@ public class VideoData : ScriptableObject
         return "";
     }
 
+    /// <summary>
+    /// Checks if the video is landscape.
+    /// </summary>
+    /// <param name="videoId">The id of the video.</param>
+    /// <returns>True if the video is landscape, false otherwise.</returns>
+    public bool IsLandscapeVideo(string videoId)
+    {
+        foreach (var video in videos)
+        {
+            if (video.videoId == videoId)
+            {
+                return video.isLandscapeVideo;
+            }
+        }
 
+        Debug.LogError($"Video with name {videoId} not found.");
+        return false;
+    }
+
+    /// <summary>
+    /// Validates that video ids are not duplicated.
+    /// </summary>
+    /// <param name="videoEntries">Array of video entries.</param>
+    /// <param name="errorMessage">Error message if validation fails.</param>
+    /// <returns>True if validation passes, false otherwise.</returns>
     private bool VideoIdNotMultiple(VideoEntry[] videoEntries, ref string errorMessage)
     {
         HashSet<string> set = new HashSet<string>();
@@ -70,8 +95,15 @@ public class VideoEntry
     [ValidateInput("NotNull", 
         "File name cannot be null or empty.")]
     public string fileName; // The file name of the video
+    
+    [LabelText("是橫向播放的影片")]
+    public bool isLandscapeVideo;
 
-
+    /// <summary>
+    /// Validates that a string is not null or empty.
+    /// </summary>
+    /// <param name="info">The string to validate.</param>
+    /// <returns>True if the string is not null or empty, false otherwise.</returns>
     private bool NotNull(string info)
     {
         return !string.IsNullOrEmpty(info);

@@ -15,11 +15,16 @@ MonoBehaviour:
   videos:
   - videoId: test
     fileName: test.mp4
+    isLandscapeVideo: 0
   - videoId: anotherTest
     fileName: test.mp4
+    isLandscapeVideo: 0
   - videoId: light
     fileName: light.mp4
+    isLandscapeVideo: 0
   - videoId: lookBird
     fileName: lookBird.mp4
+    isLandscapeVideo: 1
   - videoId: rockBird
     fileName: rockBird.mp4
+    isLandscapeVideo: 1
