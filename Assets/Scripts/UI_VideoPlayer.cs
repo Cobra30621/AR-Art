@@ -60,6 +60,12 @@ public class UI_VideoPlayer : MonoBehaviour
     [Button]
     public void PlayVideo(string videoId)
     {
+        // Do not play if a video is already playing
+        if (isPlaying)
+        {
+            return;
+        }
+                
         // Start the coroutine to prepare and play the video
         StartCoroutine(PrepareVideoCoroutine(videoId));
     }
