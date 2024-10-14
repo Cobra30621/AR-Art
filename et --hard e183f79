@@ -1,0 +1,13 @@
+[33m1c9570e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Modify the X botton.
+[33me183f79[m uppdate .gitignore
+[33me4e29cc[m Updated README.md.
+[33m0be4818[m :memo: Updated demo video link in README.md and added project QR code and user documentation links.
+[33m78ee829[m "Add documentation and validation to VideoData class, update references in Test scripts, and improve scene descriptions."
+[33mdfb88e8[m import Plugin Odin Inspector, Odin Validator
+[33m54bb874[m remove useless video .zpt
+[33me091841[m :sparkles: Added unit tests for VidPlayer, UI_VideoPlayer class in PlayMode folder.
+[33m5227c1a[m :sparkles: Added TestTool and its unit test
+[33m3f91eb8[m :sparkles: Commit: Added Scripts.asmdef file for organization of scripts within the project. Also included unit tests for VideoData class in EditMode folder.
+[33m94b1f9e[m refactor: add comment refactor: rename some class, scene
+[33mc842e72[m feat: import project from old project
+[33ma1cce9b[m :tada: init
